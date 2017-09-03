@@ -1,49 +1,266 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>reveal.js</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+    <style type="text/css">
+      .reveal section img { box-shadow:none;border:none;background:transparent; }
+    </style>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section style="text-align: left;" data-transition="fade" data-background="#4d7e65" data-background-transition="fade">
+          <h2>Front End Flows</h2>
+          <p>
+            <a href="">Node</a> - <a href="">Javascript</a> - <a href="">ES6</a> - <a href="">Babel</a>
+            <br>
+            <a href="">Npm</a> - <a href="">Yarn</a>
+            <br>
+            <a href="">Webpack</a>
+            <br>
+            <a href="">Vue.js 2</a>
+            <br>
+            <a href="">FLUX</a>
+            <br>
+            <a href="">VueX</a>
+            <br>
+            <a href="">Time Travel</a>
+          </p>          
+        </section>
+
+
+        <section>
+          <h3>Hello Vue.js</h3>
+          <pre><code class="hljs" data-trim contenteditable>
+          <div id="app">
+            <button v-on:click="addOneItem">Add Item</button>
+            <input v-model="numItems" type="number" maxlength="2"/>
+            <h3>List Items:</h3>
+            <ul>
+              <li v-for="n in parseInt(numItems)">{{ n }}</li>
+            </ul>
+          </div>
+          </code></pre>
+          <pre><code class="javascript" data-trim contenteditable>
+          var vm = new Vue({
+            el: '#app',
+            methods: {
+              addOneItem () { this.numItems++ }
+            },
+            data: {
+              numItems: 0
+            }
+          });
+          </code></pre>
+          <a target="_blank" href="https://jsfiddle.net/mikatalk/phfv9bea/">counter demo</a>
+        </section>
+        
+        <section>
+          <h3>Webpack wokflow</h3>
+          <pre><code class="c" data-trim>
+          # install nodejs and package manager
+          brew install yarn 
+          </code></pre>
+          <pre><code class="c" data-trim>
+          # install vue cli
+          yarn global add vue-cli 
+          </code></pre>
+          <pre><code class="c" data-trim>
+          # list templates available
+          vue list
+          # bootstrap a webpack project 
+          vue init webpack
+          </code></pre>
+          <pre><code class="shell" data-trim>
+          # install dependencies
+          yarn
+          # run local dev server
+          yarn dev
+          # build for prod
+          yarn build
+          # run e2e and unit tests
+          yarn test
+          </code></pre>
+        </section>
+
+
+        <section style="text-align: left;" data-transition="fade" data-background-transition="fade" data-background="#4d7e65">
+          <h1>Is Backbone a MVC?</h1>
+          <p class="fragment" style="text-align: left;">
+            <span style="font-size:1.5em; color:#42affa">Model</span>
+            <span class="fragment">  Backbone Models / Collections</span><br>
+            <span style="font-size:1.5em; color:#42affa">View</span>
+            <span class="fragment">  Handlebars.js / Underscore Templates</span><br>
+            <span style="font-size:1.5em; color:#42affa">Controller</span>
+            <span class="fragment">  Backbone Views</span>
+          </p>
+        </section>
+          
+        <section>
+          <h1>MVC Data Flow</h1>
+          <img style="box-shadow:none;border:none;background:transparent;"src="/assets/mvc.svg" />
+        </section>
+
+        <section>
+          <h3>FLUX - Unidirectional Data Flow</h3>
+          <div style="position:relative;">
+            <img class="fragment fade-out" 
+                 data-fragment-index="0"
+                 style="position:absolute;top:0;left:0;box-shadow:none;border:none;background:transparent; min-height:40vh;" 
+                 src="/assets/flux.svg" />
+            <img class="fragment fade-in" 
+                 data-fragment-index="0"
+                 style="position:absolute;top:0;left:0;box-shadow:none;border:none;background:transparent; min-height:50vh;" 
+                 src="/assets/flux-loop.svg" />
+          </div>
+        </section>
+
+        <section>
+          <h3>Store - basics</h3>
+          <p style="text-align: left;" >Single Object</p>
+          <p style="text-align: left;" >Read Only</p>
+          <p style="text-align: left;" >Dispatch `actions` in order to trigger a state change</p>
+          <p style="text-align: left;" >Handle `actions` in <a href="https://en.wikipedia.org/wiki/Pure_function">pure functions</a> called reducers
+          <img src="/assets/reducer.svg" /></p> 
+        </section>
+        
+        <section style="text-align: left;" data-transition="slide" data-background="#4d7e65" data-background-transition="fade">
+          <h4>Flux - Libraries and Frameworks</h4>
+          <h3><a href="http://redux.js.org/" class="fragment">Redux</a>
+          <span class="fragment">React</span><span class="fragment" style="text-transform: none;">, but also Angular, Ember, jQuery, vanilla JS</span>
+          </h3>
+          <h3 class="fragment" style="text-transform: none;">
+            <a href="https://vuex.vuejs.org/en/">VueX</a>
+            <span>VueJS</span>
+          </h3>
+        </section>
+
+        <section>
+          <h2>Store Mutations in VueX</h2>
+          <img src="/assets/vuex.svg" />
+        </section>
+
+        <section>
+          <h2>Store State</h2>
+          <p>Single State Tree</p>
+          <p>Can be split into modules</p>
+          <pre><code class="javascript" data-trim>
+          const state = {
+            count: 0
+          }
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Store Mutations</h2>
+          <p>Only way to change the state tree</p>
+          <p>Using Reducer, Pure Functions</p>
+          <pre><code class="javascript" data-trim>
+          const mutations = {
+            increment (state) {
+              state.count++
+            },
+            decrement (state) {
+              state.count--
+            }
+          }
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Store Actions</h2> 
+          <p>(A)Synchronous Mutation(s) Dispatched Functions</p>
+          <pre><code class="javascript" data-trim>
+          const actions = {
+            increment: ({ commit }) => commit('increment'),
+            decrement: ({ commit }) => commit('decrement'),
+            incrementIfOdd ({ commit, state }) {
+              if ((state.count + 1) % 2 === 0) {
+                commit('increment')
+              }
+            },
+            incrementAsync ({ commit }) {
+              return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                  commit('increment')
+                  resolve()
+                }, 1000)
+              })
+            }
+          }
+          </code></pre>
+        </section>  
+
+
+        <section data-background="/assets/time-travel.gif" data-transition="fade" data-background-transition="fade">
+          <h3>HMR - Time Travel</h3>
+          <p>Install <a href="https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=en" target="_blank">Chrome Extension</a><br>
+          </p> 
+          <pre><code class="bash" data-trim>
+          git clone git@github.com:vuejs/vuex.git
+          cd vuex
+          yarn
+          yarn dev
+          </code></pre>
+        </section>
+
+        <section>
+          <video controls loop autoplay>
+            <source src="/assets/vuex-plugin.mp4" type="video/mp4">
+            video not supported
+          </video>
+        </section>
+
+
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+  </body>
 </html>
