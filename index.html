@@ -97,13 +97,6 @@ console.log(message)</code></pre>
           </section>
 
           <section>
-            <p>Default parameters</p>
-            <pre class="javascript" data-trim contenteditable><code>echo = (foo='anonymous') => foo
-console.log(echo('kim')) // -> kim
-console.log(echo())      // -> anonymous</code></pre>
-          </section>
-
-          <section>
             <p>Arrow functions</p>
             <pre class="javascript" data-trim contenteditable><code>setTimeout( () => console.log('🤖'), 2000)
 // -> 🤖
@@ -112,6 +105,14 @@ document.body.onclick = (event) =>
   console.log('click X: %s', event.screenX)
 // -> click X: 543
 </code></pre>
+          </section>
+
+
+          <section>
+            <p>Default parameters</p>
+            <pre class="javascript" data-trim contenteditable><code>echo = (foo='anonymous') => foo
+console.log(echo('kim')) // -> kim
+console.log(echo())      // -> anonymous</code></pre>
           </section>
 
           <section>
@@ -167,31 +168,6 @@ generator.next('World')
           </section>
         </section>
 
-        <section>
-          <h3>Hello Vue.js</h3>
-          <pre><code class="hljs" data-trim contenteditable>
-          <div id="app">
-            <button v-on:click="addOneItem">Add Item</button>
-            <input v-model="numItems" type="number" maxlength="2"/>
-            <h3>List Items:</h3>
-            <ul>
-              <li v-for="n in parseInt(numItems)">{{ n }}</li>
-            </ul>
-          </div>
-          </code></pre>
-          <pre><code class="javascript" data-trim contenteditable>
-          var vm = new Vue({
-            el: '#app',
-            methods: {
-              addOneItem () { this.numItems++ }
-            },
-            data: {
-              numItems: 0
-            }
-          });
-          </code></pre>
-          <a target="_blank" href="https://jsfiddle.net/mikatalk/phfv9bea/">demo</a>
-        </section>
         
         <section>
           <h3>Webpack wokflow</h3>
@@ -221,6 +197,32 @@ generator.next('World')
           </code></pre>
         </section>
 
+
+        <section>
+          <h3>Hello Vue.js</h3>
+          <pre><code class="hljs" data-trim contenteditable>
+          <div id="app">
+            <button v-on:click="addOneItem">Add Item</button>
+            <input v-model="numItems" type="number" maxlength="2"/>
+            <h3>List Items:</h3>
+            <ul>
+              <li v-for="n in parseInt(numItems)">{{ n }}</li>
+            </ul>
+          </div>
+          </code></pre>
+          <pre><code class="javascript" data-trim contenteditable>
+          var vm = new Vue({
+            el: '#app',
+            methods: {
+              addOneItem () { this.numItems++ }
+            },
+            data: {
+              numItems: 0
+            }
+          });
+          </code></pre>
+          <a target="_blank" href="https://jsfiddle.net/mikatalk/phfv9bea/">demo</a>
+        </section>
 
         <section style="text-align: left;" data-transition="fade" data-background-transition="fade" data-background="#4d7e65">
           <h1>Is Backbone a MVC?</h1>
