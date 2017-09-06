@@ -54,6 +54,118 @@
           </p>          
         </section>
 
+        <section>
+          <section>
+            <h2>Node/Javascript</h2>
+            <p>2009 - ES5</p>
+            <p>2015 - ES6/ES2015</p>
+          </section>
+
+          <section>
+            <p>Block-Scoped Constructs const/let</p>
+            <pre class="javascript" data-trim contenteditable><code>const max = 5
+for (let i = 0; i < max; i++) {
+  setTimeout(function(){
+    console.log(i)
+  }, i*1000)
+}
+// using var => 5, 5, 5, 5, 5
+// using let => 0, 1, 2, 3, 4</code></pre>
+          </section>
+
+          <section>
+
+            <p>Object Destructuring Assignement </p>
+            <pre class="javascript" data-trim contenteditable><code>let [head,...tail] = 'hello'
+console.log(head, tail.join('')) // -> h ello
+
+const object = { a:0, b:1, c:2, d:{ d2:3 } }
+const { a, b, c:cAlias, d:{d2:dAlias} } = object
+console.log(a, b, cAlias, dAlias) // -> 0 1 2 3
+</code></pre>
+          
+          </section>
+
+          <section>
+            <p>Template literals + Multiline strings</p>
+            <pre class="javascript" data-trim contenteditable><code>let name = 'Bob'
+let message = `
+  Dear ${name.capitalize()},
+  This is a multiline message!
+`
+console.log(message)</code></pre>
+          </section>
+
+          <section>
+            <p>Default parameters</p>
+            <pre class="javascript" data-trim contenteditable><code>echo = (foo='anonymous') => foo
+console.log(echo('kim')) // -> kim
+console.log(echo())      // -> anonymous</code></pre>
+          </section>
+
+          <section>
+            <p>Arrow functions</p>
+            <pre class="javascript" data-trim contenteditable><code>setTimeout( () => console.log('🤖'), 2000)
+// -> 🤖
+
+document.body.onclick = (event) => 
+  console.log('click X: %s', event.screenX)
+// -> click X: 543
+</code></pre>
+          </section>
+
+          <section>
+            <p>Promises</p>
+            <pre class="javascript" data-trim contenteditable><code>let asyncTask = () => new Promise((resolve, reject)=> {
+  setTimeout(resolve, Math.random()*2000)
+})
+let progress = 0
+asyncTask()
+  .then(()=> console.log('progress', progress++))
+  .then(asyncTask)
+  .then(()=> console.log('progress', progress++))
+  .then(asyncTask)
+  .then(()=> console.log('progress', progress))
+  .catch((error) => console.log('ERROR:', error))
+</code></pre>
+          </section>
+
+          <section>
+            <p>Classes</p>
+            <pre class="javascript" data-trim contenteditable><code>class Button {
+  constructor (label='Home') {
+    this.label = label
+  }
+  sayLabel () {
+    console.log(' -> ', this.label)
+  }
+}</code></pre>
+            <pre class="javascript" data-trim contenteditable><code>class BackButton extends Button {
+  constructor () {
+    super('Back')
+  }
+}</code></pre>
+            <pre class="javascript" data-trim contenteditable><code>let btn = new Button()
+let backBtn = new BackButton()
+btn.sayLabel()     // -> Home
+backBtn.sayLabel() // -> Back</code></pre>
+          </section>
+
+          <section>
+            <p>Generators</p>
+            <pre class="javascript" data-trim contenteditable><code>function *sayTwoWords() {
+  let word1 = yield 'word 1';
+  let word2 = yield 'word 2';
+  console.log(word1 + ' ' + word2);
+}
+
+let generator = sayTwoWords();
+generator.next()
+generator.next('Hello')
+generator.next('World')
+</code></pre>
+          </section>
+        </section>
 
         <section>
           <h3>Hello Vue.js</h3>
