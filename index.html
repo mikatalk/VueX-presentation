@@ -55,7 +55,7 @@
         </section>
 
         <section>
-          <section>
+          <section data-background="#4d7e65">
             <h2>Node/Javascript</h2>
             <p>2009 - ES5</p>
             <p>2015 - ES6/ES2015</p>
@@ -168,37 +168,8 @@ generator.next('World')
           </section>
         </section>
 
-        
-        <section>
-          <h3>Webpack wokflow</h3>
-          <pre><code class="c" data-trim>
-          # install nodejs and package manager
-          brew install yarn 
-          </code></pre>
-          <pre><code class="c" data-trim>
-          # install vue cli
-          yarn global add vue-cli 
-          </code></pre>
-          <pre><code class="c" data-trim>
-          # list templates available
-          vue list
-          # bootstrap a webpack project 
-          vue init webpack
-          </code></pre>
-          <pre><code class="shell" data-trim>
-          # install dependencies
-          yarn
-          # run local dev server
-          yarn dev
-          # build for prod
-          yarn build
-          # run e2e and unit tests
-          yarn test
-          </code></pre>
-        </section>
 
-
-        <section>
+        <section data-background="#4d7e65">
           <h3>Hello Vue.js</h3>
           <pre><code class="hljs" data-trim contenteditable>
           <div id="app">
@@ -224,133 +195,173 @@ generator.next('World')
           <a target="_blank" href="https://jsfiddle.net/mikatalk/phfv9bea/">demo</a>
         </section>
 
-        <section style="text-align: left;" data-transition="fade" data-background-transition="fade" data-background="#4d7e65">
-          <h1>Is Backbone a MVC?</h1>
-          <p class="fragment" style="text-align: left;">
-            <span style="font-size:1.5em; color:#42affa">Model</span>
-            <span class="fragment">  Backbone Models / Collections</span><br>
-            <span style="font-size:1.5em; color:#42affa">View</span>
-            <span class="fragment">  Handlebars.js / Underscore Templates</span><br>
-            <span style="font-size:1.5em; color:#42affa">Controller</span>
-            <span class="fragment">  Backbone Views</span>
-          </p>
+        <section>
+          <section data-background="#4d7e65">
+            <h3>Webpack wokflow</h3>
+            <img src="./assets/what-is-webpack.png">
+            
+          </section>
+
+          <section>
+            <h3>Get Started</h3>
+            <pre><code class="c" data-trim>
+            # install nodejs and package manager
+            brew install yarn 
+            </code></pre>
+            <pre><code class="c" data-trim>
+            # install vue cli
+            yarn global add vue-cli 
+            </code></pre>
+            <pre><code class="c" data-trim>
+            # list templates available
+            vue list
+            # bootstrap a webpack project 
+            vue init webpack
+            </code></pre>
+            <pre><code class="shell" data-trim>
+            # install dependencies
+            yarn
+            # run local dev server
+            yarn dev
+            # build for prod
+            yarn build
+            # run e2e and unit tests
+            yarn test
+            </code></pre>
+          </section>
+
+        </section>
+        
+        <section>
+          <section style="text-align: left;" data-transition="fade" data-background-transition="fade" data-background="#4d7e65">
+            <h1>Is Backbone a MVC?</h1>
+            <p class="fragment" style="text-align: left;">
+              <span style="font-size:1.5em; color:#42affa">Model</span>
+              <span class="fragment">  Backbone Models / Collections</span><br>
+              <span style="font-size:1.5em; color:#42affa">View</span>
+              <span class="fragment">  Handlebars.js / Underscore Templates</span><br>
+              <span style="font-size:1.5em; color:#42affa">Controller</span>
+              <span class="fragment">  Backbone Views</span>
+            </p>
+          </section>
+
+          <section>
+            <h1>MVC Data Flow</h1>
+            <img style="box-shadow:none;border:none;background:transparent;"src="./assets/mvc.svg" />
+          </section>
+
+          <section>
+            <h3>FLUX - Unidirectional Data Flow</h3>
+            <div style="position:relative;">
+              <img class="fragment fade-out" 
+                   data-fragment-index="0"
+                   style="position:absolute;top:0;left:0;box-shadow:none;border:none;background:transparent; min-height:40vh;" 
+                   src="./assets/flux.svg" />
+              <img class="fragment fade-in" 
+                   data-fragment-index="0"
+                   style="position:absolute;top:0;left:0;box-shadow:none;border:none;background:transparent; min-height:50vh;" 
+                   src="./assets/flux-loop.svg" />
+            </div>
+          </section>
+
+          <section>
+            <h3>Store - basics</h3>
+            <p style="text-align: left;" >Single Object</p>
+            <p style="text-align: left;" >Read Only</p>
+            <p style="text-align: left;" >Dispatch `actions` in order to trigger a state change</p>
+            <p style="text-align: left;" >Handle `actions` in <a href="https://en.wikipedia.org/wiki/Pure_function" target="_blank">pure functions</a> called reducers
+            <img src="./assets/reducer.svg" /></p> 
+          </section>
         </section>
           
         <section>
-          <h1>MVC Data Flow</h1>
-          <img style="box-shadow:none;border:none;background:transparent;"src="./assets/mvc.svg" />
-        </section>
+          <section style="text-align: left;" data-transition="slide" data-background="#4d7e65" data-background-transition="fade">
+            <h4>Flux - Libraries and Frameworks</h4>
+            <h3><a href="http://redux.js.org/"  target="_blank" class="fragment">Redux</a>
+            <span class="fragment">React</span><span class="fragment" style="text-transform: none;">, but also Angular, Ember, jQuery, vanilla JS</span>
+            </h3>
+            <h3 class="fragment" style="text-transform: none;">
+              <a href="https://vuex.vuejs.org/en/" target="_blank">VueX</a>
+              <span>VueJS</span>
+            </h3>
+          </section>
 
-        <section>
-          <h3>FLUX - Unidirectional Data Flow</h3>
-          <div style="position:relative;">
-            <img class="fragment fade-out" 
-                 data-fragment-index="0"
-                 style="position:absolute;top:0;left:0;box-shadow:none;border:none;background:transparent; min-height:40vh;" 
-                 src="./assets/flux.svg" />
-            <img class="fragment fade-in" 
-                 data-fragment-index="0"
-                 style="position:absolute;top:0;left:0;box-shadow:none;border:none;background:transparent; min-height:50vh;" 
-                 src="./assets/flux-loop.svg" />
-          </div>
-        </section>
+          <section>
+            <h2>Store Mutations in VueX</h2>
+            <img src="./assets/vuex.svg" />
+          </section>
 
-        <section>
-          <h3>Store - basics</h3>
-          <p style="text-align: left;" >Single Object</p>
-          <p style="text-align: left;" >Read Only</p>
-          <p style="text-align: left;" >Dispatch `actions` in order to trigger a state change</p>
-          <p style="text-align: left;" >Handle `actions` in <a href="https://en.wikipedia.org/wiki/Pure_function" target="_blank">pure functions</a> called reducers
-          <img src="./assets/reducer.svg" /></p> 
-        </section>
-        
-        <section style="text-align: left;" data-transition="slide" data-background="#4d7e65" data-background-transition="fade">
-          <h4>Flux - Libraries and Frameworks</h4>
-          <h3><a href="http://redux.js.org/"  target="_blank" class="fragment">Redux</a>
-          <span class="fragment">React</span><span class="fragment" style="text-transform: none;">, but also Angular, Ember, jQuery, vanilla JS</span>
-          </h3>
-          <h3 class="fragment" style="text-transform: none;">
-            <a href="https://vuex.vuejs.org/en/" target="_blank">VueX</a>
-            <span>VueJS</span>
-          </h3>
-        </section>
-
-        <section>
-          <h2>Store Mutations in VueX</h2>
-          <img src="./assets/vuex.svg" />
-        </section>
-
-        <section>
-          <h2>Store State</h2>
-          <p>Single State Tree</p>
-          <p>Can be split into modules</p>
-          <pre><code class="javascript" data-trim>
-          const state = {
-            count: 0
-          }
-          </code></pre>
-        </section>
-
-        <section>
-          <h2>Store Mutations</h2>
-          <p>Only way to change the state tree</p>
-          <p>Using Reducer, Pure Functions</p>
-          <pre><code class="javascript" data-trim>
-          const mutations = {
-            increment (state) {
-              state.count++
-            },
-            decrement (state) {
-              state.count--
+          <section>
+            <h2>Store State</h2>
+            <p>Single State Tree</p>
+            <p>Can be split into modules</p>
+            <pre><code class="javascript" data-trim>
+            const state = {
+              count: 0
             }
-          }
-          </code></pre>
-        </section>
+            </code></pre>
+          </section>
 
-        <section>
-          <h2>Store Actions</h2> 
-          <p>(A)Synchronous Mutation(s) Dispatcher Functions</p>
-          <pre><code class="javascript" data-trim>
-          const actions = {
-            increment: ({ commit }) => commit('increment'),
-            decrement: ({ commit }) => commit('decrement'),
-            incrementIfOdd ({ commit, state }) {
-              if ((state.count + 1) % 2 === 0) {
-                commit('increment')
+          <section>
+            <h2>Store Mutations</h2>
+            <p>Only way to change the state tree</p>
+            <p>Using Reducer, Pure Functions</p>
+            <pre><code class="javascript" data-trim>
+            const mutations = {
+              increment (state) {
+                state.count++
+              },
+              decrement (state) {
+                state.count--
               }
-            },
-            incrementAsync ({ commit }) {
-              return new Promise((resolve, reject) => {
-                setTimeout(() => {
-                  commit('increment')
-                  resolve()
-                }, 1000)
-              })
             }
-          }
-          </code></pre>
-        </section>  
+            </code></pre>
+          </section>
 
-
-        <section data-background="./assets/time-travel.gif" data-transition="fade" data-background-transition="fade">
-          <h3>HMR - Time Travel</h3>
-          <p>Install <a href="https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=en" target="_blank">Chrome Extension</a><br>
-          </p> 
-          <pre><code class="bash" data-trim>
-          git clone git@github.com:vuejs/vuex.git
-          cd vuex
-          yarn
-          yarn dev
-          </code></pre>
+          <section>
+            <h2>Store Actions</h2> 
+            <p>(A)Synchronous Mutation(s) Dispatcher Functions</p>
+            <pre><code class="javascript" data-trim>
+            const actions = {
+              increment: ({ commit }) => commit('increment'),
+              decrement: ({ commit }) => commit('decrement'),
+              incrementIfOdd ({ commit, state }) {
+                if ((state.count + 1) % 2 === 0) {
+                  commit('increment')
+                }
+              },
+              incrementAsync ({ commit }) {
+                return new Promise((resolve, reject) => {
+                  setTimeout(() => {
+                    commit('increment')
+                    resolve()
+                  }, 1000)
+                })
+              }
+            }
+            </code></pre>
+          </section>  
         </section>
-
         <section>
-          <video controls loop autoplay>
-            <source src="./assets/vuex-plugin.mp4" type="video/mp4">
-            video not supported
-          </video>
-        </section>
+          <section data-background="./assets/time-travel.gif" data-transition="fade" data-background-transition="fade">
+            <h3>HMR - Time Travel</h3>
+            <p>Install <a href="https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=en" target="_blank">Chrome Extension</a><br>
+            </p> 
+            <pre><code class="bash" data-trim>
+            git clone git@github.com:vuejs/vuex.git
+            cd vuex
+            yarn
+            yarn dev
+            </code></pre>
+          </section>
 
+          <section>
+            <video controls loop autoplay>
+              <source src="./assets/vuex-plugin.mp4" type="video/mp4">
+              video not supported
+            </video>
+          </section>
+        </section>
 
       </div>
     </div>
