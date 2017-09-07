@@ -161,16 +161,18 @@ backBtn.logLabel() // -> Back</code></pre>
 
           <section>
             <p>Generators</p>
-            <pre class="javascript" data-trim contenteditable><code>function *sayTwoWords() {
-  let word1 = yield 'word 1';
-  let word2 = yield 'word 2';
-  console.log(word1 + ' ' + word2);
+            <pre class="javascript" data-trim contenteditable><code>sayTwoWords = function*() {
+  let word1 = yield 'enter a first word'
+  let word2 = yield 'enter a second word'
+  yield 'ready when you are'
+  console.log(word1 + ' ' + word2)
 }
 
-let generator = sayTwoWords();
+generator = sayTwoWords();
 generator.next()
 generator.next('Hello')
 generator.next('World')
+generator.next()
 </code></pre>
           </section>
 
@@ -203,7 +205,7 @@ generator.next('World')
           });
           </code></pre>
           <a target="_blank" href="https://jsfiddle.net/mikatalk/phfv9bea/">demo</a>
-          <br>
+          -
           <a target="_blank" href="https://vuejs.org/v2/examples/index.html">more examples</a>
 
         </section>
@@ -215,7 +217,9 @@ generator.next('World')
           <section data-background="#4d7e65">
             <h3>Webpack wokflow</h3>
             <img src="./assets/what-is-webpack.png">
-            
+            <a href="https://webpack.js.org/concepts/" target="_blank">concepts</a>
+            -
+            <a href="https://webpack.js.org/plugins/" target="_blank">plugins</a>
           </section>
 
           <section>
