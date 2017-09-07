@@ -30,28 +30,35 @@
     <div class="reveal">
       <div class="slides">
 
-        <section style="text-align: left;" data-transition="fade" data-background="#4d7e65" data-background-transition="fade">
-          <h2>Front End Flows</h2>
-          <p>
-            <a href="https://nodejs.org/en/" target="_blank">Node</a> - 
-            <a href="https://www.javascript.com/" target="_blank">Javascript</a> - 
-            <a href="http://es6-features.org/" target="_blank">ES6</a> - 
-            <a href="https://babeljs.io/" target="_blank">Babel</a>
-            <br>
-            <a href="https://www.npmjs.com/" target="_blank">Npm</a> - 
-            <a href="https://yarnpkg.com/en/" target="_blank">Yarn</a> - 
-            <a href="https://pbs.twimg.com/media/C9zHgqrXoAE0Tnu.jpg" target="_blank">node_modules</a>
-            <br>
-            <a href="https://webpack.github.io/" target="_blank">Webpack</a>
-            <br>
-            <a href="https://vuejs.org/" target="_blank">Vue.js 2</a>
-            <br>
-            <a href="http://facebook.github.io/flux/" target="_blank">FLUX</a>
-            <br>
-            <a href="https://github.com/vuejs/vuex" target="_blank">VueX</a>
-            <br>
-            <a href="https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=en" target="_blank">Time Travel</a>
-          </p>          
+        <section>
+
+          <section style="text-align: left;" data-transition="fade" data-background="#4d7e65" data-background-transition="fade">
+            <h2>Front End Flows</h2>
+            <p>
+              <a href="https://nodejs.org/en/" target="_blank">Node</a> - 
+              <a href="https://www.javascript.com/" target="_blank">Javascript</a> - 
+              <a href="http://es6-features.org/" target="_blank">ES6</a> - 
+              <a href="https://babeljs.io/" target="_blank">Babel</a>
+              <br>
+              <a href="https://www.npmjs.com/" target="_blank">Npm</a> - 
+              <a href="https://yarnpkg.com/en/" target="_blank">Yarn</a> - 
+              <a href="https://pbs.twimg.com/media/C9zHgqrXoAE0Tnu.jpg" target="_blank">node_modules</a>
+              <br>
+              <a href="https://webpack.github.io/" target="_blank">Webpack</a>
+              <br>
+              <a href="https://vuejs.org/" target="_blank">Vue.js 2</a>
+              <br>
+              <a href="http://facebook.github.io/flux/" target="_blank">FLUX</a>
+              <br>
+              <a href="https://github.com/vuejs/vuex" target="_blank">VueX</a>
+              <br>
+              <a href="https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=en" target="_blank">Time Travel</a>
+            </p>          
+          </section>
+          
+        </section>
+
+        <section data-transition="fade" data-background-transition="fade" data-background="./assets/es6-vs-coffeescript.png">
         </section>
 
         <section>
@@ -75,7 +82,7 @@ for (let i = 0; i < max; i++) {
 
           <section>
 
-            <p>Object Destructuring Assignement </p>
+            <p>Object Destructuring / Assignments </p>
             <pre class="javascript" data-trim contenteditable><code>let [head,...tail] = 'hello'
 console.log(head, tail.join('')) // -> h ello
 
@@ -101,9 +108,9 @@ console.log(message)</code></pre>
             <pre class="javascript" data-trim contenteditable><code>setTimeout( () => console.log('🤖'), 2000)
 // -> 🤖
 
-document.body.onclick = (event) => 
-  console.log('click X: %s', event.screenX)
-// -> click X: 543
+document.body.onclick = (e) => 
+  console.log('click X:%s - Y:%s', e.screenX, e.screenY)
+// -> click X: 543 Y:165
 </code></pre>
           </section>
 
@@ -137,7 +144,7 @@ asyncTask()
   constructor (label='Home') {
     this.label = label
   }
-  sayLabel () {
+  logLabel () {
     console.log(' -> ', this.label)
   }
 }</code></pre>
@@ -148,8 +155,8 @@ asyncTask()
 }</code></pre>
             <pre class="javascript" data-trim contenteditable><code>let btn = new Button()
 let backBtn = new BackButton()
-btn.sayLabel()     // -> Home
-backBtn.sayLabel() // -> Back</code></pre>
+btn.logLabel()     // -> Home
+backBtn.logLabel() // -> Back</code></pre>
           </section>
 
           <section>
@@ -166,8 +173,11 @@ generator.next('Hello')
 generator.next('World')
 </code></pre>
           </section>
+
         </section>
 
+        <section data-transition="fade" data-background-transition="fade" data-background="./assets/backbone-vs-vuejs.png">
+        </section>
 
         <section data-background="#4d7e65">
           <h3>Hello Vue.js</h3>
@@ -193,6 +203,12 @@ generator.next('World')
           });
           </code></pre>
           <a target="_blank" href="https://jsfiddle.net/mikatalk/phfv9bea/">demo</a>
+          <br>
+          <a target="_blank" href="https://vuejs.org/v2/examples/index.html">more examples</a>
+
+        </section>
+
+        <section data-transition="fade" data-background-transition="fade" data-background="./assets/webpack-vs-codesleeve.png">
         </section>
 
         <section>
