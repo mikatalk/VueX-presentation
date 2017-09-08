@@ -97,7 +97,7 @@ console.log(a, b, cAlias, dAlias) // -> 0 1 2 3
             <p>Template literals + Multiline strings</p>
             <pre class="javascript" data-trim contenteditable><code>let name = 'Bob'
 let message = `
-  Dear ${name.capitalize()},
+  Dear ${name},
   This is a multiline message!
 `
 console.log(message)</code></pre>
@@ -118,8 +118,8 @@ document.body.onclick = (e) =>
           <section>
             <p>Default parameters</p>
             <pre class="javascript" data-trim contenteditable><code>echo = (foo='anonymous') => foo
-console.log(echo('kim')) // -> kim
-console.log(echo())      // -> anonymous</code></pre>
+echo('kim') // -> kim
+echo()      // -> anonymous</code></pre>
           </section>
 
           <section>
@@ -271,8 +271,11 @@ generator.next()
           </section>
 
           <section>
-            <h3>FLUX - Unidirectional Data Flow</h3>
+            <h3><a href="http://facebook.github.io/flux/" target="_blank">FLUX</a> - Unidirectional Data Flow</h3>
+
             <div style="position:relative;">
+
+              
               <img class="fragment fade-out" 
                    data-fragment-index="0"
                    style="position:absolute;top:0;left:0;box-shadow:none;border:none;background:transparent; min-height:40vh;" 
